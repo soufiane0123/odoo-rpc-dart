@@ -161,8 +161,7 @@ class OdooClient {
   /// Low Level RPC call.
   /// It has to be used on all Odoo Controllers with type='json'
   Future<dynamic> callRPC(path, funcName, params) async {
-    var headers = {'Content-type': 'application/json',"Connection": "Keep-Alive",
-      "Keep-Alive": "timeout=5, max=1000"};
+    var headers = {'Content-type': 'application/json','Connection': 'Keep-Alive','Keep-Alive': 'timeout=5, max=1000'};
     var cookie = '';
     if (_sessionId != null) {
       cookie = 'session_id=' + _sessionId!.id;
